@@ -26,7 +26,7 @@ public class HotItems {
         env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime);
         String topic = "test";
         String groupId = "group_fk";
-        //读取不同的数据源
+        //读取不同的数据源哈哈
         String path = "D:\\ideaworkspace\\UserBehaviorAnalysis\\HotitemsAnalysis\\src\\main\\resources\\UserBehavior.csv";
         DataStreamSource<String> dataSource = env.readTextFile(path, "UTF-8");
 //        DataStreamSource<String> dataSource = env.addSource(new FlinkKafkaConsumer<String>(topic, new SimpleStringSchema(), Configs.getKafkaConfig(groupId)));
