@@ -93,7 +93,7 @@ public class ItermFunctions {
             });
 
             StringBuffer sbf = new StringBuffer();
-            for(int i=0;i<interval;i++){
+            for(int i=0;i<Math.min(interval,itemViewCounts.size());i++){
                 ItemViewCount itemViewCount = itemViewCounts.get(i);
                 sbf.append("No" + (i+1)).append(":")
                         .append(itemViewCount.getItemId())
