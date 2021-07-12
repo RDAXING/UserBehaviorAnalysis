@@ -29,11 +29,11 @@ public class HotItems {
         //读取不同的数据源哈哈
         String path = "D:\\ideaworkspace\\UserBehaviorAnalysis\\HotitemsAnalysis\\src\\main\\resources\\UserBehavior.csv";
         //获取文件数据
-        //        DataStreamSource<String> dataSource = env.readTextFile(path, "UTF-8");
+                DataStreamSource<String> dataSource = env.readTextFile(path, "UTF-8");
         //获取kafka数据
 //        DataStreamSource<String> dataSource = env.addSource(new FlinkKafkaConsumer<String>(topic, new SimpleStringSchema(), Configs.getKafkaConfig(groupId)));
         //获取socket流测试实时数据的获取
-        DataStreamSource<String> dataSource = env.socketTextStream("localhost",6666);
+//        DataStreamSource<String> dataSource = env.socketTextStream("localhost",6666);
         dataSource.map(new MapFunction<String, UserBehavior>() {
             @Override
             public UserBehavior map(String s) throws Exception {
